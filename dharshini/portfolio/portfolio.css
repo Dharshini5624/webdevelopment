@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text-color);
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+nav label.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+nav label.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+nav label.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+nav label.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+nav input:checked + label.slider {
+    background-color: #2196F3;
+}
+
+nav input:focus + label.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+nav input:checked + label.slider:before {
+    transform: translateX(26px);
+}
+
+nav .light-mode, nav .dark-mode {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.project {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 5px;
+}
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --header-bg: #1E1E1E;
+    --header-text-color: #ffffff;
+    --border-color: #343434;
+}
+.light-mode {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --header-bg: #f0f0f0;
+    --header-text-color: #333333;
+    --border-color: #dddddd;
+}
